@@ -1,0 +1,76 @@
+# crear una red con python
+//PNETLAB ES UN SOFTWARE DE REDES
+
+---terminal esto representa el router
+
+Router>
+Router>enable
+Router#configuraterminal
+Traslating "configureterminal"... domain server (100.72.3.97) (100.7.3.)
+
+% Bad IP address or host name
+% Unknown command 
+
+
+
+
+
+---- en visio
+
+en el cmd 
+ponemos ping 192.168.0.8
+
+
+
+
+----
+
+from netmiko import ConnectHandler
+from getpass import getpass
+
+device = {  
+  "device_type": "cisco_ios",
+  "host": "192.168.0.8",
+  "username": "admin",
+  "paswsword": getpass(),
+  }
+  
+  commands = ["logging buffered 100000"]
+  with ConnetHandler(**device) as net_connect:
+    output = net_connect.send_config_set(commands)
+    output = net_connect.save_config()
+    
+   print()
+   print(output)
+   print()
+    
+    -------------- 
+  import netmiko
+  from getpass import  get pass
+  import os
+    
+  ip = input ("Entre la dirección IP:")
+  Usuario=  input ("Entre el usuario")
+  password =  getpass("Entre la contraseña:")
+  router = 'cisco_ios'
+  config_file = "D:Pytho_Proyects/Netmiko_Cisco/config_file.txt // hacer un archivo txt 
+  
+   comando= net_connect.send_conf
+   comando= net_connect.send_save
+   comando= net_connect.send_conf
+   print(comando)
+   net_connect.disconnect()
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  
+  
+  
+
